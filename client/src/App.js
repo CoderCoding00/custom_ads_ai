@@ -4,6 +4,8 @@ import './App.css';
 //Import components
 import LoginForm from './components/LoginForm'
 import NavTab from './components/Navbar'
+import Home from './components/Home'
+import Display from './components/Display'
 // import Home from './components/Home'
 // import ProductDescription from './components/ProductDescription'
 import SignUp from './components/SignupForm'
@@ -21,6 +23,8 @@ function App() {
         {/* <Route path="/product-description" element={<ProductDescription/>} /> */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/Display" element={<Display />} />
 
       </Routes>
     </div>
