@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert, Card } from 'react-bootstrap';
 import {Link } from 'react-router-dom';
-import { loginUser } from '../utils/API';
+import { LOGIN_USER } from '../utils/API';
 // need to change login User 
 import Auth from '../utils/auth';
 
@@ -30,7 +30,7 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await loginUser(userFormData);
+      const response = await LOGIN_USER(userFormData);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -52,18 +52,19 @@ const LoginForm = () => {
 
   return (
     <>
+    <Card className='card-login'>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='form'>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
-
+    <h1 className='in'>Sign In</h1>
         <Link to="/" className="btn-flat waves-effect back-home">
               <i className="material-icons left"></i> Back to
               home
             </Link>
 
         <Form.Group className='form-login'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='email' className='label label-bold'>Email</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -76,7 +77,7 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group className='form-login'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label className='label label-bold' htmlFor='password'>Password</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -88,17 +89,18 @@ const LoginForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
 
-        <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
+        <p className='label' >
+                Don't have an account? <Link to="/signup" className='label'>Register</Link>
               </p>
 
-        <Button
+        <Button className='button-33' role='button'
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
       </Form>
+      </Card>
     </>
   );
 };

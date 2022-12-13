@@ -1,5 +1,4 @@
 import decode from 'jwt-decode';
-import { loginUser } from './API';
 
 class AuthService {
     getProfile() {
