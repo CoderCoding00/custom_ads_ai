@@ -5,41 +5,6 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from '../utils/auth';
 import {Link } from 'react-router-dom';
 
-// const SignUp = () => {
-//   const [email, setEmail] = useState('')
-//   const [password, setPassword] = useState('')
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault()
-
-//     console.log(email, password)
-//   }
-
-//         return (
-//             <form className="signup" onSubmit={handleSubmit}>
-//                 <h3>Sign up</h3>
-
-//                 <label>Email:</label>
-//                 <input 
-//                 type='email'
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 value={email}
-//                 />
-//                 <label>Password:</label>
-//                 <input 
-//                 type='password'
-//                 onChange={(e) => setPassword(e.target.value)}
-//                 value={password}
-//                 />
-//                 <button>Sign up </button>
-
-//             </form>
-//         )
-//     }
-
-
-// export default SignUp
-
 const SignUp = () => {
     const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
     const [validated] = useState(false);
@@ -85,9 +50,7 @@ const SignUp = () => {
         <>
             <Card className='card-login'>
 
-        {/* This is needed for the validation functionality above */}
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-          {/* show alert if server response is bad */}
           <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
             Something went wrong with your signup!
           </Alert>
