@@ -7,9 +7,11 @@ import { Card, Form } from 'react-bootstrap';
 const Product = () => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
+    const [product, setProduct] = useState({product: ''})
 
-    function handleFormSubmit () {
-        console.log("hello");
+    function handleFormSubmit (e) {
+e.preventDefault()
+        console.log('hello');
     }
 
     const handleInputChange = (event) => {
