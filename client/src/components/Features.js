@@ -18,8 +18,8 @@ const Features = () => {
       };
     return (
         <div>
-        <Card>
-            <Card.Header>Features</Card.Header>
+        <Card className='card-post'>
+            <Card.Header className='header'>Features</Card.Header>
             <Card.Body>
                 <Card.Title>Step 3:</Card.Title>
                 <Card.Text>
@@ -28,7 +28,7 @@ const Features = () => {
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='features'></Form.Label>
-                        <Form.Control
+                        <Form.Control className='input-post'
                             type='text'
                             name='featuresInput'
                             onChange={handleInputChange}

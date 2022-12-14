@@ -23,12 +23,14 @@ function App() {
     <Router>
     <div className='App'>
       <NavTab />
+      {/* <Home /> */}
       <Routes>
         {/* <Route path="/" exact element={<//>} /> */}
         {/* fix later for home */}
         {/* <Route path="/product-description" element={<ProductDescription/>} /> */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignUp />} />
+        {/* <Route path="/display" element={<Display />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/Audience" element={<Audience />} />

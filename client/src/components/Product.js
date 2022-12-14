@@ -18,8 +18,8 @@ const Product = () => {
       };
     return (
         <div>
-        <Card>
-            <Card.Header>Product</Card.Header>
+        <Card className='card-post'>
+            <Card.Header className='header'>Product</Card.Header>
             <Card.Body>
                 <Card.Title>Step 1:</Card.Title>
                 <Card.Text>
@@ -28,7 +28,7 @@ const Product = () => {
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='product'></Form.Label>
-                        <Form.Control
+                        <Form.Control className='input-post'
                             type='text'
                             name='productInput'
                             onChange={handleInputChange}

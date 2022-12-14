@@ -14,8 +14,8 @@ const Home = () => {
         return (
             <div>
                 <Container>
-                    <h1>Social Media Post Generator</h1>
-                    <p>Follow the steps below to generate a social media post!</p>
+                    <h1 className='home-title'> Social Media Post Generator</h1>
+                    <p className='sub-title'>Follow the steps below to generate a social media post!</p>
             <Row>
                 <Col>
                 <Product
@@ -32,9 +32,9 @@ const Home = () => {
                                         
                     />
                 </Col>
-                <Button variant="primary" size="lg" type="submit">Submit</Button>
+                <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button>
                 <Col>
-                <Result
+                <Result 
                                         
                     />
                 </Col>
