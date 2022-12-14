@@ -65,7 +65,7 @@ const LoginForm = () => {
 
         <Form.Group className='form-login'>
           <Form.Label htmlFor='email' className='label label-bold'>Email</Form.Label>
-          <Form.Control
+          <Form.Control className='input-auth'
             type='text'
             placeholder='Your email'
             name='email'
@@ -78,7 +78,7 @@ const LoginForm = () => {
 
         <Form.Group className='form-login'>
           <Form.Label className='label label-bold' htmlFor='password'>Password</Form.Label>
-          <Form.Control
+          <Form.Control className='input-auth'
             type='password'
             placeholder='Your password'
             name='password'

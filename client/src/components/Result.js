@@ -59,8 +59,8 @@ const Result = () => {
  
     return (
         <div>
-        <Card>
-            <Card.Header>Result</Card.Header>
+        <Card className=' result card-post'>
+            <Card.Header className='header'>Result</Card.Header>
             <Card.Body>
                 <Card.Title>Result</Card.Title>
                 <Card.Text>

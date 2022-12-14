@@ -61,7 +61,7 @@ const SignUp = () => {
             </Link>
           <Form.Group className='form-login'>
             <Form.Label htmlFor='username' className='label label-bold'>Username</Form.Label>
-            <Form.Control
+            <Form.Control className='input-auth'
               type='username'
               placeholder='Your username'
               name='username'
@@ -74,7 +74,7 @@ const SignUp = () => {
   
           <Form.Group className='form-login'>
             <Form.Label htmlFor='email' className='label label-bold'>Email</Form.Label>
-            <Form.Control
+            <Form.Control className='input-auth'
               type='email'
               placeholder='Your email address'
               name='email'
@@ -87,7 +87,7 @@ const SignUp = () => {
   
           <Form.Group className='form-login'>
             <Form.Label htmlFor='password' className='label label-bold'>Password</Form.Label>
-            <Form.Control
+            <Form.Control className='input-auth'
               type='password'
               placeholder='Your password'
               name='password'
