@@ -18,8 +18,8 @@ const Audience = () => {
       };
     return (
         <div>
-        <Card>
-            <Card.Header>Audience</Card.Header>
+        <Card className='card-post'>
+            <Card.Header className='header'>Audience</Card.Header>
             <Card.Body>
                 <Card.Title>Step 3:</Card.Title>
                 <Card.Text>
@@ -28,7 +28,7 @@ const Audience = () => {
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='audience'></Form.Label>
-                        <Form.Control
+                        <Form.Control className='input-post'
                             type='text'
                             name='audienceInput'
                             onChange={handleInputChange}

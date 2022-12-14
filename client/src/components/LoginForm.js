@@ -58,14 +58,14 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
     <h1 className='in'>Sign In</h1>
-        <Link to="/" className="btn-flat waves-effect back-home">
-              <i className="material-icons left"></i> Back to
+        <Link to="/home" className="btn-flat waves-effect back-home">
+        ⮐ Back to
               home
             </Link>
 
         <Form.Group className='form-login'>
           <Form.Label htmlFor='email' className='label label-bold'>Email</Form.Label>
-          <Form.Control
+          <Form.Control className='input-auth'
             type='text'
             placeholder='Your email'
             name='email'
@@ -78,7 +78,7 @@ const LoginForm = () => {
 
         <Form.Group className='form-login'>
           <Form.Label className='label label-bold' htmlFor='password'>Password</Form.Label>
-          <Form.Control
+          <Form.Control className='input-auth'
             type='password'
             placeholder='Your password'
             name='password'

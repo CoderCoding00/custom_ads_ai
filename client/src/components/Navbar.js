@@ -11,7 +11,7 @@ const NavTab = () => {
       <Container>
         <Navbar.Brand href="/" className="logo">Navbar</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="/" className='choice'>Home</Nav.Link>
+          <Nav.Link href="/home" className='choice'>Home</Nav.Link>
           <Nav.Link href="/login" className='choice'>Sign In</Nav.Link>
         </Nav>
       </Container>
