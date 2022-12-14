@@ -8,7 +8,8 @@ import Features from "./Features";
 
 const { Configuration, OpenAIApi } = require("openai");
 
-const Result = ({data}) => {
+
+const Result = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
 
@@ -42,7 +43,7 @@ const Result = ({data}) => {
           const openai = new OpenAIApi(configuration);
 
           openai.createCompletion("text-davinci-003", {
-            prompt: `Generate a custom social media post for a ${data?.product} ${userFormData.productInput} that is targeted towards ${userFormData.audienceInput}.\n`,
+            prompt: `Generate a custom social media post for a ${props.features} ${props.product} that is targeted towards ${props.audience}.\n`,
             temperature: 0.8,
             max_tokens: 280,
             top_p: 1,

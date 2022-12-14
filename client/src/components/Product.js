@@ -4,7 +4,7 @@ import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-const Product = () => {
+const Product = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
     const [product, setProduct] = useState({product: ''})
@@ -34,7 +34,7 @@ e.preventDefault()
                             type='text'
                             name='productInput'
                             onChange={handleInputChange}
-                            value={userFormData.productInput}
+                            value={props.product}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
