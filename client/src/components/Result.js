@@ -16,7 +16,7 @@ const Result = () => {
         console.log("hello");
     }
 
-    const handleInputChange = (event) => {
+        const handleInputChange = (event) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
       };
