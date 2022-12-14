@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 // import Display from './Display'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import Result from './Result'
@@ -9,8 +10,27 @@ import Features from './Features'
 const { Configuration, OpenAIApi } = require("openai");
 
 
+
 const Home = () => {
-    
+
+    const [result, setResult] = useState({});
+
+   const {
+    Product = '',
+    Audience = '',
+    Features = '',
+} = result;
+
+const handleResultChange = event => {
+    setResult(event.target.value)
+  };
+
+const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(result)
+
+};
+
         return (
             <div>
                 <Container>
@@ -19,26 +39,31 @@ const Home = () => {
             <Row>
                 <Col>
                 <Product
-                                     
+                       product={Product}              
                     />
                 </Col>
                 <Col>
                 <Audience
-                                        
+                         audience={Audience}               
                     />
                 </Col>
                 <Col>
                 <Features
-                                        
+                    features={Features}           
                     />
                 </Col>
-                <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button>
-                <Col>
-                <Result 
+                {/* <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button> */}
+                {/* <Col> */}
+                {/* <Result 
                                         
-                    />
-                </Col>
+                    /> */}
+                {/* </Col> */}
             </Row>
+            <Button variant="primary" size="lg" type="submit" className='submit-post button-33' onChange={handleResultChange} onClick={handleFormSubmit}>Submit</Button>
+
+            <Result 
+                                        
+             />
 
                 </Container>
             </div>

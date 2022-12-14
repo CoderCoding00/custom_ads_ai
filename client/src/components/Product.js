@@ -4,12 +4,14 @@ import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-const Product = () => {
+const Product = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
+    const [product, setProduct] = useState({product: ''})
 
-    function handleFormSubmit () {
-        console.log("hello");
+    function handleFormSubmit (e) {
+e.preventDefault()
+        console.log('hello');
     }
 
     const handleInputChange = (event) => {
@@ -32,7 +34,7 @@ const Product = () => {
                             type='text'
                             name='productInput'
                             onChange={handleInputChange}
-                            value={userFormData.productInput}
+                            value={props.product}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>

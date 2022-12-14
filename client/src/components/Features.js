@@ -4,9 +4,10 @@ import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-const Features = () => {
+const Features = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
+    
 
     function handleFormSubmit () {
         console.log("hello");
@@ -32,7 +33,7 @@ const Features = () => {
                             type='text'
                             name='featuresInput'
                             onChange={handleInputChange}
-                            value={userFormData.featuresInput}
+                            value={props.features}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please add features!</Form.Control.Feedback>
