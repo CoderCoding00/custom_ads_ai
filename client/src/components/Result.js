@@ -8,7 +8,8 @@ import Features from "./Features";
 
 const { Configuration, OpenAIApi } = require("openai");
 
-const Result = () => {
+
+const Result = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
 
@@ -42,7 +43,7 @@ const Result = () => {
           const openai = new OpenAIApi(configuration);
 
           openai.createCompletion("text-davinci-003", {
-            prompt: `Generate a custom social media post for a ${userFormData.featuresInput} ${userFormData.productInput} that is targeted towards ${userFormData.audienceInput}.\n`,
+            prompt: `Generate a custom social media post for a ${props.features} ${props.product} that is targeted towards ${props.audience}.\n`,
             temperature: 0.8,
             max_tokens: 280,
             top_p: 1,
@@ -62,15 +63,13 @@ const Result = () => {
         <Card className=' result card-post'>
             <Card.Header className='header'>Result</Card.Header>
             <Card.Body>
-                <Card.Title>Result</Card.Title>
-                <Card.Text>
-                    Results
-                </Card.Text>
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='result'></Form.Label>
                         <Form.Control
                             type='text'
+                            as='textarea'
+                            rows={6}
                             name='result'
                             onChange={handleInputChange}
                             value={userFormData.result}
