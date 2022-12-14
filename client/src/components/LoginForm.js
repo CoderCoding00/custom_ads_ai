@@ -58,8 +58,8 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
     <h1 className='in'>Sign In</h1>
-        <Link to="/" className="btn-flat waves-effect back-home">
-              <i className="material-icons left"></i> Back to
+        <Link to="/home" className="btn-flat waves-effect back-home">
+        ⮐ Back to
               home
             </Link>
 
