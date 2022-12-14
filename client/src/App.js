@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-
 //Import components
 import LoginForm from './components/LoginForm'
 import NavTab from './components/Navbar'

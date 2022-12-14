@@ -1,55 +1,63 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert, Card } from 'react-bootstrap';
 import {Link } from 'react-router-dom';
-import { LOGIN_USER } from '../utils/API';
-// need to change login User 
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const LoginForm = () => {
+function LoginForm(props) {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [login, { error }] = useMutation(LOGIN_USER); 
 
-  // const changeAuthMode = () => {
-  //   setAuthMode(authMode === "signin" ? "signup" : "signin")
-  // }
-  
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: {email: userFormData.email, password: userFormData.password},
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    }catch (e){
+      console.log(e);
+    }
+  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  
 
     // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
-    try {
-      const response = await LOGIN_USER(userFormData);
+    // try {
+    //   const response = await LOGIN_USER(userFormData);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+    //   if (!response.ok) {
+    //     throw new Error('something went wrong!');
+    //   }
 
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }
+    //   const { token, user } = await response.json();
+    //   console.log(user);
+    //   Auth.login(token);
+    // } catch (err) {
+    //   console.error(err);
+    //   setShowAlert(true);
+    // }
 
-    setUserFormData({
-      email: '',
-      password: '',
-    });
-  };
+    // setUserFormData({
+    //   email: '',
+    //   password: '',
+    // });
+  
 
   return (
     <>
@@ -93,6 +101,11 @@ const LoginForm = () => {
         <p className='label' >
                 Don't have an account? <Link to="/signup" className='label'>Register</Link>
               </p>
+              {error ? (
+          <div>
+            <p className="error-text">The provided credentials are incorrect</p>
+          </div>
+        ) : null}
 
         <Button className='button-33' role='button'
           disabled={!(userFormData.email && userFormData.password)}

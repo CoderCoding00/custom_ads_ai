@@ -1,17 +1,18 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 // import Display from './Display'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import Result from './Result'
 import Audience from './Audience'
 import Product from './Product'
 import Features from './Features'
-
-const { Configuration, OpenAIApi } = require("openai");
-
+import Result from './Result'
 
 
-const Home = () => {
+// const { Configuration, OpenAIApi } = require("openai");
+
+
+
+function Home() {
 
     const [result, setResult] = useState({});
 

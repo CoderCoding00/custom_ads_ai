@@ -4,7 +4,7 @@ import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-const Audience = (props) => {
+function Audience(props) {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
 

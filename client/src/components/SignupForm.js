@@ -1,50 +1,65 @@
 import React from "react";
 import {useState} from 'react'
+import { useMutation } from '@apollo/client';
 import {Form, Button, Alert, Card} from 'react-bootstrap';
 import { ADD_USER } from "../utils/mutations";
 import Auth from '../utils/auth';
 import {Link } from 'react-router-dom';
 
-const SignUp = () => {
-    const [userFormData, setUserFormData] = useState({username: '', email: '', password: ''});
+function SignUp(props) {
+    const [userFormData, setUserFormData] = useState({ email: '', password: ''});
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
+const [addUser] = useMutation(ADD_USER);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        email: userFormData.email,
+        password: userFormData.password,
+        username: userFormData.username,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  };
 
     const handleInputChange = (event) => {
         const {name, value} =event.target;
         setUserFormData({...userFormData, [name]: value});
     };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
 
-        const form = event.currentTarget;
-        if(form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
+    //     const form = event.currentTarget;
+    //     if(form.checkValidity() === false) {
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //     }
 
-        try {
-            const response = await ADD_USER(userFormData);
+    //     try {
+    //         const response = await ADD_USER(userFormData);
 
-            if (!response.ok) {
-                throw new Error('something went wrong!');
-            }
+    //         if (!response.ok) {
+    //             throw new Error('something went wrong!');
+    //         }
 
-            const {token, user} = await response.json();
-            console.log(user);
-            Auth.login(token);
-        }catch (err) {
-            console.error(err);
-            setShowAlert(true);
-        }
+    //         const {token, user} = await response.json();
+    //         console.log(user);
+    //         Auth.login(token);
+    //     }catch (err) {
+    //         console.error(err);
+    //         setShowAlert(true);
+    //     }
 
-        setUserFormData({
-          username: '',
-            email: '',
-            password: '',
-        });
-    };
+    //     setUserFormData({
+    //       username: '',
+    //         email: '',
+    //         password: '',
+    //     });
+    
 
     return (
         <>
@@ -111,7 +126,7 @@ const SignUp = () => {
         </Form>
         </Card>
       </>
-    )
-};
+    );
+}
 
 export default SignUp;

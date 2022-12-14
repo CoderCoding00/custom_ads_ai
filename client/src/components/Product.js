@@ -3,8 +3,7 @@ import {useState} from 'react'
 import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
-
-const Product = (props) => {
+function Product(props) {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
     const [product, setProduct] = useState({product: ''})
@@ -49,4 +48,4 @@ e.preventDefault()
     )
 };
 
-export default Product;
+export default Product
