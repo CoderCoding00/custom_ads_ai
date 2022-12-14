@@ -111,6 +111,7 @@ body{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-top: 30px;
 }
 
 .button-33:hover {
@@ -141,7 +142,7 @@ body{
 }
 
 .card-post{
-  width: 200px;
+  width: 300px;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px, rgba(154, 150, 150, 0.3) 0px 18px 36px -18px;
 border-radius: 20px;
 }
@@ -170,7 +171,10 @@ font-size: 18px;
 
 .result{
   height: 275px;
-  margin-left: 30px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .input-auth{

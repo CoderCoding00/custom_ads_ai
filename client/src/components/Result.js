@@ -62,15 +62,13 @@ const Result = () => {
         <Card className=' result card-post'>
             <Card.Header className='header'>Result</Card.Header>
             <Card.Body>
-                <Card.Title>Result</Card.Title>
-                <Card.Text>
-                    Results
-                </Card.Text>
                 <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor='result'></Form.Label>
                         <Form.Control
                             type='text'
+                            as='textarea'
+                            rows={6}
                             name='result'
                             onChange={handleInputChange}
                             value={userFormData.result}

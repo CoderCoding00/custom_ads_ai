@@ -32,13 +32,18 @@ const Home = () => {
                                         
                     />
                 </Col>
-                <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button>
-                <Col>
-                <Result 
+                {/* <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button> */}
+                {/* <Col> */}
+                {/* <Result 
                                         
-                    />
-                </Col>
+                    /> */}
+                {/* </Col> */}
             </Row>
+            <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button>
+
+            <Result 
+                                        
+             />
 
                 </Container>
             </div>
