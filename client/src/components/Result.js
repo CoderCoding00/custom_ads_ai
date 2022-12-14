@@ -1,19 +1,34 @@
 import React from "react"
-import { Component } from 'react'
-import { Container, Form, Button, Card } from 'react-bootstrap'
+import { useState } from "react";
+import { Card, Form } from 'react-bootstrap'
+import Audience from "./Audience";
+import Product from "./Product";
+import Features from "./Features";
+// import { Configuration, OpenAIApi } from "openai";
 
 const { Configuration, OpenAIApi } = require("openai");
 
-class Result extends Component {
-    constructor() {
-        super()
-        this.state = {
-            heading: 'Your social media post is generating....',
-            response: '....stay tuned.'
-        }
+const Result = () => {
+    const [userFormData, setUserFormData] = useState({userInput: ''});
+    const [validated] = useState(false);
+
+    function handleFormSubmit () {
+        console.log("hello");
     }
 
-    onFormSubmit = e => {
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserFormData({ ...userFormData, [name]: value });
+      };
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //         heading: 'Your social media post is generating....',
+    //         response: '....stay tuned.'
+    //     }
+    // }
+
+    handleFormSubmit = e => {
         e.preventDefault()
 
         const formData = new FormData(e.target),
@@ -27,7 +42,7 @@ class Result extends Component {
           const openai = new OpenAIApi(configuration);
 
           openai.createCompletion("text-davinci-003", {
-            prompt: "Generate a social media post for a ${formDataObj.productFeatures} ${formDataObj.productName} that is targeted towards ${formDataObj.productAudience}.\n",
+            prompt: `Generate a custom social media post for a ${userFormData.featuresInput} ${userFormData.productInput} that is targeted towards ${userFormData.audienceInput}.\n`,
             temperature: 0.8,
             max_tokens: 280,
             top_p: 1,
@@ -41,34 +56,39 @@ class Result extends Component {
             })
           });
     }
+ 
+    return (
+        <div>
+        <Card>
+            <Card.Header>Result</Card.Header>
+            <Card.Body>
+                <Card.Title>Result</Card.Title>
+                <Card.Text>
+                    Results
+                </Card.Text>
+                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                    <Form.Group>
+                        <Form.Label htmlFor='result'></Form.Label>
+                        <Form.Control
+                            type='text'
+                            name='result'
+                            onChange={handleInputChange}
+                            value={userFormData.result}
+                            required
+                            />
+                    <Form.Control.Feedback type='invalid'>Please enter target audience!</Form.Control.Feedback>
+                </Form.Group> 
+                </Form>
+                {/* <Nav.Link href={enterButton}>
+                    <Button variant="primary" size="lg">Enter</Button>
+                </Nav.Link> */}
+            </Card.Body>
+        </Card>
+        </div>
+    )
+};
 
-    render() {
-        function onSubmitFunction () {
-            console.log("hello");
-        }
-            const { header, title, text, enterButton } = this.props
-        return (
-            <div>
-            <Card>
-                <Card.Header>{header}</Card.Header>
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>
-                        {text}
-                    </Card.Text>
-                    <Form
-                    onSubmit={onSubmitFunction}
-                    className="input">
-                        <input id="inputname" type="text" />
-                        {/* <Button variant="primary" size="lg" type="submit">Submit</Button> */}
-                    </Form>
-                </Card.Body>
-            </Card>
-            </div>
-        )
-    }
 
 
-}
 
 export default Result
