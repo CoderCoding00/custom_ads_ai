@@ -9,7 +9,7 @@ const NavTab = () => {
       <>
       <Navbar className='navbar' variant='dark'>
       <Container>
-        <Navbar.Brand href="/" className="logo">Navbar</Navbar.Brand>
+        <Navbar.Brand href="/" className="logo">PostGenAI</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/home" className='choice'>Home</Nav.Link>
           <Nav.Link href="/login" className='choice'>Sign In</Nav.Link>
