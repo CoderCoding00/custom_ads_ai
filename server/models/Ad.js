@@ -25,6 +25,6 @@ const adsSchema = new Schema({
         type: String,
         required: true,
     },
-})
+}) 
 
 module.exports = adsSchema;
