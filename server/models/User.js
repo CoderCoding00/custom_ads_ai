@@ -17,7 +17,7 @@ const userSchema = new Schema({
         match: [/.+@.+\..+/, 'Must match an email address!'],
 
     },
-    passowrd: {
+    password: {
         type: String,
         required: true,
         minlength: 5,
