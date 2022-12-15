@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const adSchema = require('./Ad');
 
 const userSchema = new Schema(
-{
+  {
     username: {
       type: String,
       required: true,
@@ -32,6 +32,7 @@ const userSchema = new Schema(
     },
   }
 );
+
  
 
 // hash user password
