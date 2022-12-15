@@ -1,73 +1,46 @@
-const mongoose = require ('mongoose')
-const Schema = mongoose.Schema 
-const bcrypt = require('bcrypt')
-const validator = require('validator')
+// *** NEW CODE ***
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
-const userSchema = new Schema({
+// CREATE adSchema FROM MODELS/AD.JS
+const adSchema = require('./Ad');
+
+const userSchema = new Schema(
+  {
     username: {
-        type: String, 
-        required: true,
-        unique: true, 
-        trim: true
+      type: String,
+      required: true,
+      unique: true,
     },
     email: {
-        type: String, 
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/, 'Must match an email address!'],
-
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 5,
-    }
-})
+});
+ 
 
-userSchema.statics.signup = async function (username, email, password) {
-    if (!email || !password || !username) {
-        throw Error('All fields must be filled')
-    }
-   
-    if (!validator.isEmail(email)) {
-        throw Error ('Email is no valid')
-    }
-    if (!validator.isStrongPassword(password)) {
-        throw Error('Password not strong enough')
-    }
-    
-    const exists = await this.findOne({email})
+// hash user password
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
 
-    if (exists) {
-        throw Error('Email already in use')
-    }
+  next();
+});
 
-    const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(password, salt)
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 
-    const user = await this.create({email, password: hash })
+// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+userSchema.virtual('adCount').get(function () {
+  return this.savedAds.length;
+});
 
-    return user
-}
+const User = model('User', userSchema);
 
-userSchema.statics.login = async function(email, password) {
-    if (!email || !password) {
-        throw Error('All fields must be filled')
-    }
-
-    const user = await this.findOne({email})
-
-    if (!user) {
-        throw Error('Incorrect email')
-    }
-
-    const match = await bcrypt.compare(password, user.password)
-
-    if (!match) {
-        throw Error('Incorrect password')
-    }
-
-    return user
-}
-
-module.exports = mongoose.model('User', userSchema)
+module.exports = User;

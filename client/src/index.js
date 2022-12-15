@@ -6,28 +6,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-
+// *** NOT SURE IF WE NEED THIS SO COMMENTED OUT FOR NOW
+// import reportWebVitals from './reportWebVitals';
  
 import App from './App';
 
-// ReactDOM.render( <App />, document.getElementById('root'));
-
 // MIGHT REPLACE LNE 12 WITH THIS
-// ReactDOM.render(
-//     <React.StrictMode>
-//       <App />
-//     </React.StrictMode>,
-//     document.getElementById('root')
-//   );
+ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
 
+// *** COMMENTED OUT ORIGINAL FOR NOW REPLACED BY ABOVE
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <App />
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-
-  </React.StrictMode>
-);
+//   </React.StrictMode>
+// );
   
-reportWebVitals();
+// *** NOT SURE IF WE NEED THIS SO COMMENTED OUT FOR NOW
+// reportWebVitals();

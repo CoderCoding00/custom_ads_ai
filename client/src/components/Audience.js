@@ -4,7 +4,7 @@ import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-const Audience = () => {
+const Audience = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
 
@@ -32,7 +32,7 @@ const Audience = () => {
                             type='text'
                             name='audienceInput'
                             onChange={handleInputChange}
-                            value={userFormData.audienceInput}
+                            value={props.audience}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please enter target audience!</Form.Control.Feedback>
