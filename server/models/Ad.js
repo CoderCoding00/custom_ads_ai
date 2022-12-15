@@ -1,7 +1,7 @@
 //This will be the schema for the social media posts we create. 
-const { schema, Schema } = require('mongoose');
+const { Schema } = require('mongoose');
 
-const adsSchema = new Schema({
+const adSchema = new Schema({
     creator: [
         {
             type: String
@@ -27,4 +27,4 @@ const adsSchema = new Schema({
     },
 }) 
 
-module.exports = adsSchema;
+module.exports = adSchema;
