@@ -27,19 +27,19 @@ e.preventDefault()
                 <Card.Text>
                     What is your product?
                 </Card.Text>
-                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-                    <Form.Group>
-                        <Form.Label htmlFor='product'></Form.Label>
-                        <Form.Control className='input-post'
-                            type='text'
+                {/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}> */}
+                    {/* <Form.Group>
+                        <Form.Label htmlFor='product'></Form.Label> */}
+                        <input className='input-post'
+                            type='productInput'
                             name='productInput'
                             onChange={handleInputChange}
                             value={props.product}
-                            required
+                            // required
                             />
-                    <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
-                </Form.Group> 
-                </Form>
+                    {/* <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
+                </Form.Group>  */}
+                {/* </Form> */}
                 {/* <Nav.Link href={enterButton}>
                     <Button variant="primary" size="lg">Enter</Button>
                 </Nav.Link> */}
