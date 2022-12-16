@@ -21,7 +21,7 @@ const Audience = (props) => {
         <Card className='card-post'>
             <Card.Header className='header'>Audience</Card.Header>
             <Card.Body>
-                <Card.Title>Step 3:</Card.Title>
+                <Card.Title>Step 2:</Card.Title>
                 <Card.Text>
                     Who is your target audience?
                 </Card.Text>

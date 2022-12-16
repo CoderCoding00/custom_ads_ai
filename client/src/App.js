@@ -12,7 +12,7 @@ import SignUp from './components/SignupForm'
 import Product from './components/Product';
 import Audience from './components/Audience';
 import Features from './components/Features';
-import Result from './components/Result';
+// import Result from './components/Result';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -65,7 +65,7 @@ function App() {
         <Route path="/Product" element={<Product />} />
         <Route path="/Audience" element={<Audience />} />
         <Route path="/Features" element={<Features />} />
-        <Route path="/Result" element={<Result />} />
+        {/* <Route path="/Result" element={<Result />} /> */}
         {/* <Route path="/Display" element={<Display />} /> */}
 
       </Routes>
