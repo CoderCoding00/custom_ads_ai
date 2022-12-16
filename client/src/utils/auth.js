@@ -28,6 +28,8 @@ class AuthService {
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
+        // add path to a user page here (create in pages folder)
+        // Create the endpoint in app.js
         window.location.assign('/');
     }
 
