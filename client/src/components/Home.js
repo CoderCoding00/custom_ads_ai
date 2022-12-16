@@ -2,7 +2,7 @@ import React from 'react'
 // import { useState, useEffect } from 'react';
 import { useState } from 'react';
 // import Display from './Display'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 // import Result from './Result'
 import Audience from './Audience'
 import Product from './Product'
@@ -93,12 +93,25 @@ const configuration = new Configuration({
                     onChange={(e) => setPrompt(e.target.value)}
                 />
                 <Button onClick={generatePost}>Generate Post</Button>
-
+                <Form>
+                    <Form.Group>
+                         <Form.Label htmlFor='result'></Form.Label>
+                       <Form.Control
+                            type='text'
+                            as='textarea'
+                            rows={6}
+                            name='result'
+                            // onChange={handleInputChange}
+                            value={setResult}
+                            
+                            />
+                </Form.Group> 
+                </Form>
                 {result.length > 0 ? (
-                <textarea src={result} alt="postResult" />
-                ) : (
-                  <></>
-                )}
+                                <textarea src={result} alt="postResult" />
+                                ) : (
+                                  <></>
+                                )}
             </div>
 
                 </Container>
