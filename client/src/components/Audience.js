@@ -5,16 +5,13 @@ import { Card, Form } from 'react-bootstrap';
 
 
 const Audience = (props) => {
-    const [userFormData, setUserFormData] = useState({userInput: ''});
-    const [validated] = useState(false);
+    const [audienceFormData, setUserFormData] = useState('');
+    
+    const handleInputChange = event => {
+       
+        setUserFormData(event.target.value);
 
-    function handleFormSubmit () {
-        console.log("hello");
-    }
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUserFormData({ ...userFormData, [name]: value });
+        console.log('audience:', event.target.value);
       };
     return (
         <div>
@@ -25,26 +22,30 @@ const Audience = (props) => {
                 <Card.Text>
                     Who is your target audience?
                 </Card.Text>
-                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                <Form>
                     <Form.Group>
                         <Form.Label htmlFor='audience'></Form.Label>
-                        <Form.Control className='input-post'
-                            type='text'
-                            name='audienceInput'
-                            onChange={handleInputChange}
-                            defaultValue={props.audience}
-                            required
-                            />
-                    <Form.Control.Feedback type='invalid'>Please enter target audience!</Form.Control.Feedback>
+                       <Form.Text>
+                        <input
+                        type="text"
+                        id="audienceInput"
+                        name="audienceInput"
+                        onChange={handleInputChange}
+                        value={audienceFormData}
+                        >
+                        </input>
+                        
+                        </Form.Text>
+                    
                 </Form.Group> 
                 </Form>
-                {/* <Nav.Link href={enterButton}>
-                    <Button variant="primary" size="lg">Enter</Button>
-                </Nav.Link> */}
+                       
             </Card.Body>
         </Card>
+        
         </div>
     )
 };
+
 
 export default Audience;

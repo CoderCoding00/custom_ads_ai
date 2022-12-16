@@ -14,25 +14,8 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const Home = () => {
-    const [promptData, setPrompt] = useState({});
+    const [prompt, setPrompt] = useState({});
     const [result, setResult] = useState('');
-
-//    const {
-//     Product = '',
-//     Audience = '',
-//     Features = '',
-// } = result;
-
-// const handleResultChange = event => {
-//     setResult(event.target.value)
-//   };
-
-// const handleFormSubmit = async (event) => {
-//     event.preventDefault();
-//     console.log(result)
-
-// };
-
 
 
 const configuration = new Configuration({
@@ -41,9 +24,11 @@ const configuration = new Configuration({
     const openai = new OpenAIApi(configuration);
     
     
+    
     const generatePost = async () => {
-        let prompt = `Generate a custom social media post for a ${Features} ${Product} that is targeted towards ${Audience}.\n`; 
-        console.log(Audience);
+        // let prompt = `Generate a custom social media post for a ${Features} ${Product} that is targeted towards ${Audience}.\n`; 
+        
+
         const res = await openai.createCompletion({
             model:"text-davinci-003",
             prompt: prompt,
@@ -85,45 +70,14 @@ const configuration = new Configuration({
                               
                     />
                 </Col>
-                {/* <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button> */}
-                {/* <Col> */}
-                {/* <Result 
-                                        
-                    /> */}
-                {/* </Col> */}
+
             </Row>
             <div className="result-main">
-                <h3>TESTING</h3>
-                <input
-                    className="result-input"
-                    placeholder="blahblahblah"
-                    onChange={(e) => setPrompt(e.target.value)}
-                />
-                <Button onSubmit={generatePost}>Generate Post</Button>
+                <h3>Result</h3>
+          
+                <Button onClick={generatePost}>Generate Post</Button>
                 <textarea>{result}</textarea>
-                {/* <Form>
-                    <Form.Group>
-                         <Form.Label htmlFor='result'></Form.Label>
-                       <Form.Control
-                            type='text'
-                            as='textarea'
-                            rows={6}
-                            name='result'
-                            // onChange={handleInputChange}
-                            value={result.length > 0 ? (
-                                <textarea src={result} alt="postResult"/>
-                            ): (
-                                <></>
-                            )}                            
-                            
-                            />
-                </Form.Group> 
-                </Form> */}
-                {/* {result.length > 0 ? (
-                                <textarea src={result} alt="postResult" />
-                                ) : (
-                                  <></>
-                                )} */}
+              
             </div>
 
                 </Container>

@@ -1,21 +1,17 @@
 import React from 'react'
 import {useState} from 'react'
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
 const Features = (props) => {
-    const [userFormData, setUserFormData] = useState({userInput: ''});
-    const [validated] = useState(false);
+    const [featureFormData, setUserFormData] = useState('');
     
+    const handleInputChange = event => {
+       
+        setUserFormData(event.target.value);
 
-    function handleFormSubmit () {
-        console.log("hello");
-    }
-    
-    const handleInputChange = (event) => {
-        const { name, defaultValue } = event.target;
-        setUserFormData({ ...userFormData, [name]: defaultValue });
+        console.log('3 features:', event.target.value);
       };
     return (
         <div>
@@ -26,24 +22,24 @@ const Features = (props) => {
                 <Card.Text>
                     What are 3 key features?
                 </Card.Text>
-                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                <Form>
                     <Form.Group>
                         <Form.Label htmlFor='features'></Form.Label>
-                        <Form.Control className='input-post'
-                            type='text'
-                            name='featuresInput'
-                            onChange={handleInputChange}
-                            defaultValue={userFormData.userInput}
-                            required
-                            />
-                    <Form.Control.Feedback type='invalid'>Please add features!</Form.Control.Feedback>
+                       <Form.Text>
+                        <input
+                        type="text"
+                        id="featuresInput"
+                        name="featuresInput"
+                        onChange={handleInputChange}
+                        value={featureFormData}
+                        >
+                        </input>
+                        
+                        </Form.Text>
+                    
                 </Form.Group> 
                 </Form>
-                
-                {/* <Nav.Link href={enterButton}> */}
-                    <Button type='button' variant="primary" size="lg">Enter</Button>
-                {/* </Nav.Link> */}
-                
+                       
             </Card.Body>
         </Card>
         
