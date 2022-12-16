@@ -12,7 +12,7 @@ import Result from './Result'
 
 
 
-function Home() {
+const Home = () => {
 
     const [result, setResult] = useState({});
 

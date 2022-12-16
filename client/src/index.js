@@ -9,15 +9,12 @@ import './index.css';
 // *** NOT SURE IF WE NEED THIS SO COMMENTED OUT FOR NOW
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import { ApolloProvider, ApolloClient } from '@apollo/client';
 
 // MIGHT REPLACE LNE 12 WITH THIS
 ReactDOM.render(
-  <ApolloProvider client={ApolloClient}>
     <React.StrictMode>
       <App />
-    </React.StrictMode>
-    </ApolloProvider>,
+    </React.StrictMode>,
     document.getElementById('root')
     
   );

@@ -9,7 +9,7 @@ function LoginForm(props) {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [login, { error }] = useMutation(LOGIN_USER); 
+  const [login, { error, data }] = useMutation(LOGIN_USER); 
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -67,11 +67,17 @@ function LoginForm(props) {
           Something went wrong with your login credentials!
         </Alert>
     <h1 className='in'>Sign In</h1>
+    {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <>
         <Link to="/home" className="btn-flat waves-effect back-home">
         ⮐ Back to
               home
             </Link>
-
         <Form.Group className='form-login'>
           <Form.Label htmlFor='email' className='label label-bold'>Email</Form.Label>
           <Form.Control className='input-auth'
@@ -101,19 +107,22 @@ function LoginForm(props) {
         <p className='label' >
                 Don't have an account? <Link to="/signup" className='label'>Register</Link>
               </p>
-              {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
-
         <Button className='button-33' role='button'
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
         </Button>
+        </>)}
       </Form>
+      
+
+
+      {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
       </Card>
     </>
   );

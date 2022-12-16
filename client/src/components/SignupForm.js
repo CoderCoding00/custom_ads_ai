@@ -7,10 +7,10 @@ import Auth from '../utils/auth';
 import {Link } from 'react-router-dom';
 
 function SignUp(props) {
-    const [userFormData, setUserFormData] = useState({ email: '', password: ''});
+    const [userFormData, setUserFormData] = useState({ email: '', password: '', username: '',});
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-const [addUser] = useMutation(ADD_USER);
+const [addUser, {error, data}] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -70,6 +70,13 @@ const [addUser] = useMutation(ADD_USER);
             Something went wrong with your signup!
           </Alert>
           <h1 className='in'>Sign Up</h1>
+          {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <>
         <Link to="/home" className="btn-flat waves-effect back-home">
         ⮐ Back to
               home
@@ -123,6 +130,13 @@ const [addUser] = useMutation(ADD_USER);
             variant='success'>
             Submit
           </Button>
+            </>
+            )}
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
         </Form>
         </Card>
       </>
