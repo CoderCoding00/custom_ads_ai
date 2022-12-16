@@ -1,10 +1,10 @@
 import React from 'react'
 import {useState} from 'react'
-import { Card, Form } from 'react-bootstrap';
+import { Card, Form, Button } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
 
-function Features (props) {
+const Features = (props) => {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
     
@@ -12,10 +12,10 @@ function Features (props) {
     function handleFormSubmit () {
         console.log("hello");
     }
-
+    
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUserFormData({ ...userFormData, [name]: value });
+        const { name, defaultValue } = event.target;
+        setUserFormData({ ...userFormData, [name]: defaultValue });
       };
     return (
         <div>
@@ -33,17 +33,20 @@ function Features (props) {
                             type='text'
                             name='featuresInput'
                             onChange={handleInputChange}
-                            value={props.features}
+                            defaultValue={userFormData.userInput}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please add features!</Form.Control.Feedback>
                 </Form.Group> 
                 </Form>
-                {/* <Nav.Link href={enterButton}>
-                    <Button variant="primary" size="lg">Enter</Button>
-                </Nav.Link> */}
+                
+                {/* <Nav.Link href={enterButton}> */}
+                    <Button type='button' variant="primary" size="lg">Enter</Button>
+                {/* </Nav.Link> */}
+                
             </Card.Body>
         </Card>
+        
         </div>
     )
 };

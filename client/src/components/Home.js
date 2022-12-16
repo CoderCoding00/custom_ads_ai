@@ -2,7 +2,7 @@ import React from 'react'
 // import { useState, useEffect } from 'react';
 import { useState } from 'react';
 // import Display from './Display'
-import { Container, Row, Col, Button, Form } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 // import Result from './Result'
 import Audience from './Audience'
 import Product from './Product'
@@ -14,7 +14,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const Home = () => {
-    const [prompt, setPrompt] = useState({userInput: ''});
+    const [promptData, setPrompt] = useState({});
     const [result, setResult] = useState('');
 
 //    const {
@@ -33,14 +33,18 @@ const Home = () => {
 
 // };
 
+
+
 const configuration = new Configuration({
     apiKey:'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',
       });
     const openai = new OpenAIApi(configuration);
     
+    
     const generatePost = async () => {
-        
-        const res = await openai.createPost({
+        let prompt = `Generate a custom social media post for a ${Features} ${Product} that is targeted towards ${Audience}.\n`; 
+        console.log(Audience);
+        const res = await openai.createCompletion({
             model:"text-davinci-003",
             prompt: prompt,
             // `Generate a custom social media post for a ${Features} ${Product}  that is targeted towards ${Audience}.\n`,
@@ -53,6 +57,7 @@ const configuration = new Configuration({
         
 
         setResult(res.data.data[0].url);
+ 
     };
 
         return (
@@ -64,18 +69,20 @@ const configuration = new Configuration({
                 <Col>
                 
                 <Product
-                       product={Product}             
+                       product={Product}
+                        
                     />
                 </Col>
                 <Col>
                 <Audience
-
-                    audience={Audience}               
+                    audience={Audience}
+                                  
                     />
                 </Col>
                 <Col>
                 <Features
-                    features={Features}           
+                    features={Features}
+                              
                     />
                 </Col>
                 {/* <Button variant="primary" size="lg" type="submit" className='submit-post button-33'>Submit</Button> */}
@@ -92,8 +99,9 @@ const configuration = new Configuration({
                     placeholder="blahblahblah"
                     onChange={(e) => setPrompt(e.target.value)}
                 />
-                <Button onClick={generatePost}>Generate Post</Button>
-                <Form>
+                <Button onSubmit={generatePost}>Generate Post</Button>
+                <textarea>{result}</textarea>
+                {/* <Form>
                     <Form.Group>
                          <Form.Label htmlFor='result'></Form.Label>
                        <Form.Control
@@ -102,16 +110,20 @@ const configuration = new Configuration({
                             rows={6}
                             name='result'
                             // onChange={handleInputChange}
-                            value={setResult}
+                            value={result.length > 0 ? (
+                                <textarea src={result} alt="postResult"/>
+                            ): (
+                                <></>
+                            )}                            
                             
                             />
                 </Form.Group> 
-                </Form>
-                {result.length > 0 ? (
+                </Form> */}
+                {/* {result.length > 0 ? (
                                 <textarea src={result} alt="postResult" />
                                 ) : (
                                   <></>
-                                )}
+                                )} */}
             </div>
 
                 </Container>
