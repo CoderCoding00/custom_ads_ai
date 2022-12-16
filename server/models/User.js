@@ -18,7 +18,21 @@ const userSchema = new Schema(
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
-});
+    password: {
+      type: String,
+      required: true,
+    },
+    // set savedAds to be an array of data that adheres to the adSchema
+    savedAds: [adSchema],
+  },
+  // set this to use virtual below
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
+
  
 
 // hash user password
@@ -36,7 +50,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+// when we query a user, we'll also get another field called `adCount` with the number of saved ads we have
 userSchema.virtual('adCount').get(function () {
   return this.savedAds.length;
 });

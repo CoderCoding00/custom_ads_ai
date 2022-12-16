@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  // Changed to mongod://localhost/openai (was mongod://localhost/googlebooks)
+    process.env.MONGODB_URI || 'mongodb://localhost/openai',
     {   useNewUrlParser: true,
         useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
+        // useCreateIndex: true,
+        // useFindAndModify: false,
     },
   );
 
