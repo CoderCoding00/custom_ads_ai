@@ -5,18 +5,13 @@ import { Card, Form } from 'react-bootstrap';
 
 
 const Product = (props) => {
-    const [userFormData, setUserFormData] = useState({userInput: ''});
-    const [validated] = useState(false);
-    // const [product, setProduct] = useState({product: ''})
+    const [productFormData, setUserFormData] = useState('');
+    
+    const handleInputChange = event => {
+       
+        setUserFormData(event.target.value);
 
-    function handleFormSubmit (e) {
-e.preventDefault()
-        console.log('hello');
-    }
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUserFormData({ ...userFormData, [name]: value });
+        console.log('product:', event.target.value);
       };
     return (
         <div>
@@ -27,26 +22,31 @@ e.preventDefault()
                 <Card.Text>
                     What is your product?
                 </Card.Text>
-                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                <Form>
                     <Form.Group>
                         <Form.Label htmlFor='product'></Form.Label>
-                        <Form.Control className='input-post'
-                            type='text'
-                            name='productInput'
-                            onChange={handleInputChange}
-                            defaultValue={props.product}
-                            required
-                            />
-                    <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
+                       <Form.Text>
+                        <input
+                        type="text"
+                        id="productInput"
+                        name="productInput"
+                        onChange={handleInputChange}
+                        value={productFormData}
+                        >
+                        </input>
+                        
+                        </Form.Text>
+                    
                 </Form.Group> 
                 </Form>
-                {/* <Nav.Link href={enterButton}>
-                    <Button variant="primary" size="lg">Enter</Button>
-                </Nav.Link> */}
+                       
             </Card.Body>
         </Card>
+        
         </div>
     )
 };
+
+
 
 export default Product;
