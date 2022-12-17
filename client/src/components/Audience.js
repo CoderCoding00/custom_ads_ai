@@ -32,7 +32,7 @@ const Audience = (props) => {
                             type='text'
                             name='audienceInput'
                             onChange={handleInputChange}
-                            value={props.audience}
+                            defaultValue={props.audience}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please enter target audience!</Form.Control.Feedback>

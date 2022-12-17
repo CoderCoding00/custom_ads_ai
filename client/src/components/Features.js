@@ -33,7 +33,7 @@ function Features (props) {
                             type='text'
                             name='featuresInput'
                             onChange={handleInputChange}
-                            value={props.features}
+                            defaultValue={props.features}
                             required
                             />
                     <Form.Control.Feedback type='invalid'>Please add features!</Form.Control.Feedback>

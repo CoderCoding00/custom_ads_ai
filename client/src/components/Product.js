@@ -3,8 +3,7 @@ import {useState} from 'react'
 import { Card, Form } from 'react-bootstrap';
 // import { Form } from 'react-router-dom';
 
-
-const Product = (props) => {
+function Product(props) {
     const [userFormData, setUserFormData] = useState({userInput: ''});
     const [validated] = useState(false);
     const [product, setProduct] = useState({product: ''})
@@ -27,19 +26,19 @@ e.preventDefault()
                 <Card.Text>
                     What is your product?
                 </Card.Text>
-                {/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}> */}
-                    {/* <Form.Group>
-                        <Form.Label htmlFor='product'></Form.Label> */}
-                        <input className='input-post'
-                            type='productInput'
+                <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                    <Form.Group>
+                        <Form.Label htmlFor='product'></Form.Label>
+                        <Form.Control className='input-post'
+                            type='text'
                             name='productInput'
                             onChange={handleInputChange}
-                            value={props.product}
-                            // required
+                            defaultValue={props.product}
+                            required
                             />
-                    {/* <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
-                </Form.Group>  */}
-                {/* </Form> */}
+                    <Form.Control.Feedback type='invalid'>Please enter a product!</Form.Control.Feedback>
+                </Form.Group> 
+                </Form>
                 {/* <Nav.Link href={enterButton}>
                     <Button variant="primary" size="lg">Enter</Button>
                 </Nav.Link> */}
@@ -49,4 +48,4 @@ e.preventDefault()
     )
 };
 
-export default Product;
+export default Product

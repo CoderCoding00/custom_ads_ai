@@ -14,24 +14,24 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 const Home = () => {
-    const [prompt, setPrompt] = useState({userInput: ''});
+    // const [prompt, setPrompt] = useState({userInput: ''});
+    const [prompt, setPrompt] = useState('');
     const [result, setResult] = useState('');
 
-//    const {
-//     Product = '',
-//     Audience = '',
-//     Features = '',
-// } = result;
+    async function onSubmit(event) {
+        event.preventDefault();
+        const response = await fetch('/api/generate', {
+            method: 'POST', 
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({post: prompt}),
+        });
+        const data = await response.json();
+        setResult(data.result);
+        setPrompt('');
+    }
 
-// const handleResultChange = event => {
-//     setResult(event.target.value)
-//   };
-
-// const handleFormSubmit = async (event) => {
-//     event.preventDefault();
-//     console.log(result)
-
-// };
 
 const configuration = new Configuration({
     apiKey:'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',
@@ -40,10 +40,10 @@ const configuration = new Configuration({
     
     const generatePost = async () => {
         
-        const res = await openai.createPost({
+        const res = await openai.createCompletion({
             model:"text-davinci-003",
-            prompt: prompt,
-            // `Generate a custom social media post for a ${Features} ${Product}  that is targeted towards ${Audience}.\n`,
+            prompt: 
+            `Generate a custom social media post for a ${Features} ${Product}  that is targeted towards ${Audience}.\n`,
             temperature: 0.8,
             max_tokens: 280,
             top_p: 1,
@@ -93,7 +93,7 @@ const configuration = new Configuration({
                     onChange={(e) => setPrompt(e.target.value)}
                 />
                 <Button onClick={generatePost}>Generate Post</Button>
-                <Form>
+                <Form onSubmit={onSubmit}>
                     <Form.Group>
                          <Form.Label htmlFor='result'></Form.Label>
                        <Form.Control
