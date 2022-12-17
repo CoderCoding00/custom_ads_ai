@@ -84,6 +84,8 @@ body{
   /* box-shadow: 3px 4px 3px rgb(122, 117, 117); */
   box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   border-radius: 50px;
+  /* CENTER THE TEXT */
+  text-align: center;
 }
 
 .in{
@@ -117,9 +119,15 @@ body{
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-top: 30px;
+  /* CENTER THE BUTTON */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .button-33:hover {
+  /* TRANSITION THE COLOR TO BLUE */
+  background-color: blue;
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
