@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Form, Button, Alert, Card } from "react-bootstrap";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 const SignUp = () => {
