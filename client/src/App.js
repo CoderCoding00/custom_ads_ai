@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 
 //Import components
-import LoginForm from './components/LoginForm'
-import NavTab from './components/Navbar'
-import Home from './components/Home'
+import LoginForm from './components/LoginForm';
+import NavTab from './components/Navbar';
+import Home from './components/Home';
+import footerBuild from './components/footer';
 // import Display from './components/Display'
 // import Home from './components/Home'
 // import ProductDescription from './components/ProductDescription'
-import SignUp from './components/SignupForm'
+import SignUp from './components/SignupForm';
 import Product from './components/Product';
 import Audience from './components/Audience';
 import Features from './components/Features';
@@ -71,7 +72,9 @@ function App() {
       </Routes>
     </div>
     </Router>
+    <footerBuild />
     </ApolloProvider>
+     
   );
 }
   
