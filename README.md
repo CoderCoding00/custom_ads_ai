@@ -1,38 +1,3 @@
-# Custom Advertisment Generator Using OpenAI GPT 3 
-
-## Project Description
-
-## Table of Contents
-
-- [Custom Advertisment Generator Using OpenAI GPT 3](#custom-advertisment-generator-using-openai-gpt-3)
-  - [Project Description](#project-description)
-  - [Table of Contents](#table-of-contents)
-  - [User Story](#user-story)
-  - [Deployment](#deployment)
-  - [Tech Used In The Project](#tech-used-in-the-project)
-  - [Contributors](#contributors)
-    - [Heroku Link](#heroku-link)
-    - [Github Link](#github-link)
-
-## User Story
-
-```md
-
-```
-
-## Deployment
-This application was deployed on Heroku. The link is provided below along with the github repository. 
-
-## Tech Used In The Project
-
-## Contributors 
-
-### Heroku Link
-
-### Github Link
-https://github.com/CoderCoding00/mern_book_search_engine
-
-
 # Project3_Team 5
 PostGenAI 🤖
 
@@ -72,87 +37,36 @@ THEN I can click Log Out on the top right of the page and sign out
 ## The Process 📝
 To sastify our user's needs, we created: 
 - Components for the home page, 
-- Created seeds to store all of the movies's information
-- Created seeds to store user's information
-- Created model and routes
-- Created Handlebars and put the HTML in for each page
+- Created schemas, routes, and models for the server side
+- Created API route for OpenAI
+- Apply CSS Bootstrap for pages
 - Fixing error to make everything connect and work properly
 
-Handlebars
+Components
 
 ```
-Created 8 files for handlebars: 
-Main, All Movies, Homepage, Login, Movie, Profile, Review, Sign Up.
-
-```
-
-CSS File
-
-```
-- Red navigation bar and white backgound
-- Log in, Log Out, Movies, Profile buttons in the nav bar
-- Cards of different movies with images and spread evenly
-- User's viewport adaptability
-
-```
-
-Routes 
-
-   Created routes for each page 
-```
-
-const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const movieRoutes = require('./movieRoutes');
-const reviewRoutes = require('./reviewRoutes');
-
-router.use('/users', userRoutes);
-router.use('/movies', movieRoutes);
-router.use('/reviews', reviewRoutes);
-
-
-module.exports = router;
-```
-
-Seeds
-
-   Created seed file for all movies:
-
-```
-title: 'The Godfather',
-        director: 'Francis Ford Coppola',
-        cast:'Marlon Brando, Al Pacino, James Caan',
-        movie_id: 1,
-        bark_score: 95,
-        filename: '01-The-Godfather.jpg',
-
-```
-
-   Created seed for User: 
-
-```
-email: 'gus@hotmail.com',
-      username: 'gus',
-      password: 'password123'
+Created 7 files for components: 
+Home, Nav, Signup, Login, Product, Audience, Features
 
 ```
 
 ## Heroku 💻
-https://pacific-brook-50244.herokuapp.com
 
 
 ## The Result 🏆
-After connecting all files, we were able to have a working page with movies so user can choose a movie to watch in a movie's night and can leave a review after finishing watching
+The result is when we open the page, we were able to sign in and sign up and log out. And we can type in the input box to generate a social media post for a product.
 
-## The Collaborators 👩🏻‍💻 🧑🏻‍💻 👩🏻‍💻
-[Jenny Wang](https://github.com/aurorayihe)
+## The Collaborators  🧑🏻‍💻 🧑🏻‍💻 🧑🏻‍💻 👩🏻‍💻
+[Drum Holliday](https://github.com/CoderCoding00)
 
-[Gassan Bundakji](https://github.com/gbundakji)
+[Max Lin](https://github.com/max-lin95)
+
+[John Lopex](https://github.com/Think-Again-Coder)
 
 [Daisy Lien](https://github.com/quynhlien2002)
 
 ## Submission 📬
-[GitHub Repo](https://github.com/aurorayihe/Project2_team10)
+[GitHub Repo](https://github.com/CoderCoding00/custom_ads_ai)
 
 
 
