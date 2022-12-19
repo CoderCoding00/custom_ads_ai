@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-// import auth require
+// import auth require???
 import Auth from "../utils/auth";
 
 // THE 2 BELOW ARE NEED TO SAVE THE POST
@@ -16,11 +16,11 @@ class ProductDescription extends Component {
   constructor() {
     super();
     this.state = {
-      heading: "The Response from the AI will be shown here",
-      response: "...await the response",
+      heading: "Your custom ad will be shown below",
+      response: "...",
     };
   }
-  // **** NEED THIS TO BE GLOBAL VARIABLE AND PASSS INTO SAVE POST METHOD
+  // **** NEED TO CREATE A GLOBAL VARIABLE AND PASS INTO SAVE POST METHOD
   // var postData
 
   // ******* REWRITE THIS FOR CLASS COMPONENTS
@@ -55,11 +55,33 @@ class ProductDescription extends Component {
     // *** USE .productName b/c the line 42 'name' is "productName"
     console.log(formDataObj.productName);
 
-    // GIVEN CODE FROM OPENAI
+    // *** ?? GIVEN CODE FROM OPENAI NOT USED
+
+    // const configuration = new Configuration({
+    //   apiKey: process.env.OPENAI_API_KEY,
+    // });
+    // const openai = new OpenAIApi(configuration);
+
+    // const response = await openai.createCompletion({
+    //   model: "text-davinci-003",
+    //   prompt: "Generate a social media ad for a macbook pro\n\n\n\nIntroducing the new MacBook Pro – the perfect combination of power and portability. With the latest Intel processors, stunning Retina display, and all-day battery life, you can take your work and creativity to the next level. Get yours today – you won't regret it! #MacBookPro #PowerAndPortability #IntelProcessors #RetinaDisplay",
+    //   temperature: 0.7,
+    //   max_tokens: 360,
+    //   top_p: 1,
+    //   frequency_penalty: 0,
+    //   presence_penalty: 0,
+    // });
+
+    // *** REFACTORED CODE FROM OPENAI
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
+
+    // **USE THIS ONCE API KEY IS IN .env
+    // const configuration = new Configuration({
+    //   apiKey: process.env.OPENAI_API_KEY,
+    // });
 
     // OPEN AI CODE GIVEN TO GENERATE THE AD
     openai
@@ -74,7 +96,7 @@ class ProductDescription extends Component {
       })
       .then((response) => {
         this.setState({
-          heading: `AI Generated Ad description for: ${formDataObj.productName}`,
+          heading: `Custom Ad description for: ${formDataObj.productName}`,
           response: response.data.choices[0].text,
         });
         // ************* SAVE THE AD TO THE DATABASE MAKE A GLOBAL VAR *************
@@ -95,35 +117,46 @@ class ProductDescription extends Component {
     return (
       <div>
         <Container>
-          <br />
-          <h1 className='home-title'> Enter the name of the product and we'll do the rest. </h1>
-          <h5 className='sub-title-des'>
+          {/* <h2 className="home-title">
+            {" "}
+            Enter the name of the product for a unique ad to be generated{" "}
+          </h2> */}
+          {/* <h5 className="sub-title-des">
             Be as descriptive as you want to such adding your tageted audience.
-          </h5>
-          <br />
-          <br />
+          </h5> */}
+          {/* <br /> */}
           <Form onSubmit={this.onFormSubmit}>
             <Form.Group classname="mb-3" controlId="formBasicEmail">
-              <Form.Label className='sub-title'>
+              <Form.Label className="sub-title">
                 Please enter the name of the product and any other relevant
-                information. Click Generate Response and the AI will generate a
-                response.
+                information.
               </Form.Label>
+              <br />
+              <h5>
+                Click Generate Response and the AI will create a unique ad.
+              </h5>
+              <br />
+              <br />
               {/***** 'name' "productName" is the key in the formDataObj */}
-              <Form.Control className='generate-input input-post'
+              <Form.Control
+                className="generate-input input-post"
                 type="text"
                 name="productName"
                 placeholder="Enter Product Name"
               />
             </Form.Group>
 
-            <Button variant="success" className='
-            button-33' size="md" type="submit">
+            <Button
+              variant="outline-success"
+              className="secondary-button"
+              size="md"
+              type="secondary"
+            >
               Generate Response
             </Button>
           </Form>
 
-          <Card className='generate-post'>
+          <Card className="generate-post">
             {/* <Card.Header>Ad</Card.Header> */}
             <Card.Body>
               <Card.Title>
@@ -133,7 +166,7 @@ class ProductDescription extends Component {
                 <h4>{this.state.response}</h4>
               </Card.Text>
               {/* BUTTON TO SAVE THE POST (NOT WORKING AS OF NOW) */}
-              <Button className="button" variant='info'>Save Post 💾</Button>
+              <Button variant="outline-success">Save Post 💾</Button>
             </Card.Body>
           </Card>
         </Container>

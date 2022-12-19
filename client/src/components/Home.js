@@ -8,11 +8,15 @@ class Home extends Component {
     return (
       <div>
         <Container>
-          <h1 className='home-title'>Social Media Post Generator </h1>
-          <p className='sub-title'>Follow the steps below to generate a social media post!</p>
-          <Row className='card-home'>
-            <Col >
-              <Display className='card-box'
+          <h1 className="home-title">Social Media Post Generator </h1>
+          <p className="sub-title">
+            Click on "Get Started" and follow the steps to generate a social
+            media post!
+          </p>
+          <Row className="card-home">
+            <Col>
+              <Display
+                className="card-box"
                 header="Product Description"
                 title="Generate Product Descriptions"
                 text="Generate a product description for product"
