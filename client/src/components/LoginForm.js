@@ -55,82 +55,81 @@ const LoginForm = () => {
   return (
     <>
       {/* <Card> */}
-        <Form 
-          noValidate
-          validated={validated}
-          onSubmit={handleFormSubmit}
-          className="form"
+      <Form
+        noValidate
+        validated={validated}
+        onSubmit={handleFormSubmit}
+        className="form"
+      >
+        <Alert
+          dismissible
+          onClose={() => setShowAlert(false)}
+          show={showAlert}
+          variant="danger"
         >
-          <Alert
-            dismissible
-            onClose={() => setShowAlert(false)}
-            show={showAlert}
-            variant="danger"
-          >
-            Something went wrong!
-          </Alert>
-          {/* ADDED LOG IN TO BE SHOW AS TEXT ON PAGE */}
-          <h1 className="in">Log In</h1>
-          {/* <h1 className="in">Sign In</h1>
+          Something went wrong with you Login!
+        </Alert>
+        {/* ADDED LOG IN TO BE SHOW AS TEXT ON PAGE */}
+        <h1 className="in">Log In</h1>
+        {/* <h1 className="in">Sign In</h1>
           <Link to="/home" className="btn-flat waves-effect back-home">
             ⮐ Back to home
           </Link> */}
 
-          <Form.Group className="form-login">
-            <Form.Label htmlFor="email" className="label label-bold">
-              Email
-            </Form.Label>
-            <Form.Control
-              className="input-auth"
-              type="text"
-              placeholder="Your email"
-              name="email"
-              onChange={handleInputChange}
-              value={userFormData.email}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Email is required!
-            </Form.Control.Feedback>
-          </Form.Group>
+        <Form.Group className="form-login">
+          <Form.Label htmlFor="email" className="label label-bold">
+            Email
+          </Form.Label>
+          <Form.Control
+            className="input-auth"
+            type="text"
+            placeholder="Your email"
+            name="email"
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Email is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-          <Form.Group className="form-login">
-            <Form.Label className="label label-bold" htmlFor="password">
-              Password
-            </Form.Label>
-            <Form.Control
-              className="input-auth"
-              type="password"
-              placeholder="Your password"
-              name="password"
-              onChange={handleInputChange}
-              value={userFormData.password}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Password is required!
-            </Form.Control.Feedback>
-          </Form.Group>
+        <Form.Group className="form-login">
+          <Form.Label className="label label-bold" htmlFor="password">
+            Password
+          </Form.Label>
+          <Form.Control
+            className="input-auth"
+            type="password"
+            placeholder="Your password"
+            name="password"
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Password is required!
+          </Form.Control.Feedback>
+        </Form.Group>
 
-          {/* <p className="label">
+        {/* <p className="label">
             Don't have an account?{" "}
             <Link to="/signup" className="label">
               Register
             </Link>
           </p> */}
 
-<Button
-            className="button-33 auth-button text-center"
-            role="button"
-            disabled={!(userFormData.email && userFormData.password)}
-            type="submit"
-            variant="success"
-          >
-            Submit
-          </Button>
+        <Button
+          className="button-33 auth-button text-center"
+          role="button"
+          disabled={!(userFormData.email && userFormData.password)}
+          type="submit"
+          variant="success"
+        >
+          Submit
+        </Button>
+      </Form>
 
-        </Form>
-                  
       {/* </Card> */}
     </>
   );
