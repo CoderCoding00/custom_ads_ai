@@ -13,21 +13,24 @@ const NavTab = () => {
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
+          {/* Set this link to the LandingPage.js */}
           <Navbar.Brand as={Link} to="/">
-            Custom Post Generator
+            <span className="logo-text">AI Post Generator</span>
           </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto">
-              <Nav.Link as={Link} to="/home">
-                Generate Posts
-              </Nav.Link>
-              {/* if user is logged in show saved "generate post" "view ads" and "logout" */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/saved">
-                    Saved Posts
+                  <Nav.Link as={Link} to="/">
+                    Generate Posts
                   </Nav.Link>
+                  {/* **** SAVED POSTS NOT WORKING AS OF NOW */}
+                  {/* <Nav.Link as={Link} to="/saved">
+                    Saved Posts
+                  </Nav.Link> */}
+                  <Nav.Link as={Link} to="/"></Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
@@ -39,14 +42,14 @@ const NavTab = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* set modal data up */}
+      {/* Modal data up */}
       <Modal
         size="lg"
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
       >
-        {/* tab container to do either signup or login component */}
+        {/* Signup or Login */}
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">

@@ -28,7 +28,7 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything
+    // MAKE SURE THE FORM IS VALID
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -67,7 +67,7 @@ const LoginForm = () => {
             show={showAlert}
             variant="danger"
           >
-            Something went wrong with your login credentials!
+            Something went wrong!
           </Alert>
           {/* ADDED LOG IN TO BE SHOW AS TEXT ON PAGE */}
           <h1 className="in">Log In</h1>
