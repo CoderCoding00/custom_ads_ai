@@ -19,18 +19,26 @@ class Display extends Component {
                 <Button variant="primary">Go somewhere</Button>
             </Card.Body>
             </Card> */}
-        <Card>
-          <Card.Header>{header}</Card.Header>
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Text>{text}</Card.Text>
+        {/* <Card className='card-box'> */}
+          {/* <Card.Header className='home-head'>{header}</Card.Header> */}
+          {/* <Card.Body> */}
+            {/* <Card.Title className='descrip'>{title}</Card.Title> */}
+            {/* <Card.Text className='descrip'>{text}</Card.Text>
             <Nav.Link href={theLink}>
-              <Button variant="primary" size="lg">
+              <Button className='button-33' size="lg" variant='success'>
                 Get Started
               </Button>
             </Nav.Link>
           </Card.Body>
+        </Card> */}
+        <Card className='image'
+        >
         </Card>
+        <a href='/product-description'><Button className='button-33 home-button' size="lg" variant='success'>
+                Get Started
+              </Button>
+              </a>
+        
       </div>
     );
   }

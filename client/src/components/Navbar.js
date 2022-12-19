@@ -11,11 +11,11 @@ const NavTab = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar variant="dark" expand="lg" className='navbar'>
         <Container fluid>
           {/* Set this link to the LandingPage.js */}
           <Navbar.Brand as={Link} to="/">
-            <span className="logo-text">AI Post Generator</span>
+            <span className="logo-text logo">POSTGENAI</span>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="navbar" />
@@ -23,7 +23,7 @@ const NavTab = () => {
             <Nav className="ml-auto">
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/">
+                  <Nav.Link as={Link} to="/" className='choice'>
                     Generate Posts
                   </Nav.Link>
                   {/* **** SAVED POSTS NOT WORKING AS OF NOW */}
@@ -31,10 +31,10 @@ const NavTab = () => {
                     Saved Posts
                   </Nav.Link> */}
                   <Nav.Link as={Link} to="/"></Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} className='choice'>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>
+                <Nav.Link onClick={() => setShowModal(true)} className='choice'>
                   Login/Sign Up
                 </Nav.Link>
               )}
@@ -54,11 +54,11 @@ const NavTab = () => {
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
               <Nav variant="pills">
-                <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
+                <Nav.Item >
+                  <Nav.Link eventKey="login" className='pop'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  <Nav.Link eventKey="signup" className='pop'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>

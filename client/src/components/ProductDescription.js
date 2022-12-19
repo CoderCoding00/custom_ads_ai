@@ -95,35 +95,35 @@ class ProductDescription extends Component {
     return (
       <div>
         <Container>
-          <h1> Generate A Unique Social Media Ad </h1>
           <br />
-          <h5> Enter the name of the product and we'll do the rest. </h5>
-          <h5>
+          <h1 className='home-title'> Enter the name of the product and we'll do the rest. </h1>
+          <h5 className='sub-title-des'>
             Be as descriptive as you want to such adding your tageted audience.
           </h5>
           <br />
           <br />
           <Form onSubmit={this.onFormSubmit}>
             <Form.Group classname="mb-3" controlId="formBasicEmail">
-              <Form.Label>
+              <Form.Label className='sub-title'>
                 Please enter the name of the product and any other relevant
                 information. Click Generate Response and the AI will generate a
                 response.
               </Form.Label>
               {/***** 'name' "productName" is the key in the formDataObj */}
-              <Form.Control
+              <Form.Control className='generate-input input-post'
                 type="text"
                 name="productName"
                 placeholder="Enter Product Name"
               />
             </Form.Group>
 
-            <Button variant="primary" size="md" type="submit">
+            <Button variant="success" className='
+            button-33' size="md" type="submit">
               Generate Response
             </Button>
           </Form>
 
-          <Card>
+          <Card className='generate-post'>
             {/* <Card.Header>Ad</Card.Header> */}
             <Card.Body>
               <Card.Title>
@@ -133,7 +133,7 @@ class ProductDescription extends Component {
                 <h4>{this.state.response}</h4>
               </Card.Text>
               {/* BUTTON TO SAVE THE POST (NOT WORKING AS OF NOW) */}
-              <Button className="btn-block btn-info">Save Post</Button>
+              <Button className="button" variant='info'>Save Post 💾</Button>
             </Card.Body>
           </Card>
         </Container>
