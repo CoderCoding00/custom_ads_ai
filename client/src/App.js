@@ -7,10 +7,7 @@ import NavTab from "./components/Navbar";
 import Home from "./components/Home";
 import ProductDescription from "./components/ProductDescription";
 import SignUp from "./components/SignupForm";
-<<<<<<< HEAD
 import footerBuild from './components/footer';
-=======
->>>>>>> 62af5a5180785bbd1c80a2df2988a5b51f95bf82
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
