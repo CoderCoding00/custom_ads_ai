@@ -54,8 +54,8 @@ const LoginForm = () => {
 
   return (
     <>
-      <Card className="card-login">
-        <Form
+      {/* <Card> */}
+        <Form 
           noValidate
           validated={validated}
           onSubmit={handleFormSubmit}
@@ -119,8 +119,8 @@ const LoginForm = () => {
             </Link>
           </p> */}
 
-          <Button
-            className="button-33"
+<Button
+            className="button-33 auth-button text-center"
             role="button"
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
@@ -128,8 +128,10 @@ const LoginForm = () => {
           >
             Submit
           </Button>
+
         </Form>
-      </Card>
+                  
+      {/* </Card> */}
     </>
   );
 };

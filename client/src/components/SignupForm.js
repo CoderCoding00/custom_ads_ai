@@ -51,7 +51,7 @@ const SignUp = () => {
 
   return (
     <>
-      <Card className="card-login">
+      {/* <Card className="card-login"> */}
         <Form
           noValidate
           validated={validated}
@@ -128,8 +128,8 @@ const SignUp = () => {
             Already have an account? <Link to="/login">Log in</Link>
           </p> */}
 
-          <Button
-            className="button-33"
+<Button
+            className="button-33 auth-button"
             role="button"
             disabled={
               !(
@@ -143,8 +143,25 @@ const SignUp = () => {
           >
             Submit
           </Button>
+        
         </Form>
-      </Card>
+
+        {/* <Button
+            className="button-33 auth-button"
+            role="button"
+            disabled={
+              !(
+                userFormData.username &&
+                userFormData.email &&
+                userFormData.password
+              )
+            }
+            type="submit"
+            variant="success"
+          >
+            Submit
+          </Button> */}
+      {/* </Card> */}
     </>
   );
 };

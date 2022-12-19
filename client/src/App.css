@@ -1,7 +1,13 @@
-
+*{
+  background-color: black;
+  
+}
 
 .App {
   text-align: center;
+  background-color: black;
+  
+  
 }
 
 .App-logo {
@@ -41,6 +47,21 @@
 
 body{
   background-color: black;
+  
+}
+
+.image{
+  background-image: url(https://images.igrad.com/financial-wellness-blog/how-to-use-social-media-to-teach-personal-finance.webp);
+  background-position: left center;
+background-size: contain;;
+height: 300px;
+background-repeat: no-repeat;
+width: 40%;
+margin-left: 30%;
+}
+
+.home-button{
+  margin-bottom: 100px;
 }
 
 .back-home{ 
@@ -61,12 +82,10 @@ body{
 
 .navbar {
   background-color: rgb(0, 0, 0);
-  height: 100px;
+  height: 150px;
   box-shadow: 1px 4px 5px 3px rgb(120, 117, 117);
   
 }
-
-
 
 .choice{
   color: white;
@@ -74,11 +93,21 @@ body{
 }
 
 .logo{
-  font-size: 40px;
+  /* font-size: 38px; */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* text-shadow: 2px 3px 3px rgb(84, 148, 38);
+  color: rgb(228, 245, 228); */
+  /* background-color: rgb(230,222,219);
+background: linear-gradient(45deg, rgba(230,222,219,1) 0%, rgba(6,222,98,1) 100%);
+} */
+font-size: 50px;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 .card-login, .card-signup{
-  margin-top: 5%;
+  margin-top: 10%;
   margin-right: 10%;
   margin-left: 10%;
   /* box-shadow: 3px 4px 3px rgb(122, 117, 117); */
@@ -88,14 +117,22 @@ body{
   text-align: center;
 }
 
+.auth-button{
+margin-bottom: 30px;
+}
+
 .in{
   margin-bottom: 30px;
-  text-shadow: 2px 3px 1px rgb(199, 210, 231);
+  text-shadow: 2px 3px 1px rgb(43, 70, 119);
+  color: rgb(248, 248, 248);
+  text-align: center;
   
 }
 
 .label-bold{
   font-weight: bold;
+  color: white;
+  text-align: center;
 }
 
 
@@ -143,7 +180,15 @@ body{
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.2) rotate(-2deg);
   /* CHANGE THE COLOR WHEN HOVERED OVER */
-  background-color: blue;
+  background-color: rgb(130, 130, 192);
+}
+
+.descrip{
+  color: white;
+}
+
+.home-head{
+  font-size: 18px;
 }
 
 .home-title{
@@ -153,6 +198,23 @@ body{
 
 .sub-title{
   color: white;
+}
+
+.sub-title-des{
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.card-home{
+  margin-top: 50px;
+  border-radius: 50px;
+
+}
+
+.card-box{
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px, rgba(154, 150, 150, 0.3) 0px 18px 36px -18px;
+  
 }
 
 .input-post{
@@ -207,3 +269,40 @@ font-size: 18px;
 .input-auth{
   border-radius: 10px;
 }
+
+.generate-post{
+  margin-top: 50px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px, rgba(154, 150, 150, 0.3) 0px 18px 36px -18px;
+border-radius: 30px white;
+margin-bottom: 100px;
+}
+
+.auth-button {
+  width: 100px;
+  position: relative;
+  left: 40%;
+}
+
+.modal-title {
+  color: #fff;
+    background-image: linear-gradient(255deg, #f9b25e, #f17b30);
+}
+
+#pop:focus{
+  background-color: #658470;
+  color: black;
+
+}
+
+#pop{
+  color: white;
+  border-radius: 10px;
+}
+
+#pop:hover{
+  background-color: #5a7e5a;
+  font-size: 27px;
+
+}
+
+

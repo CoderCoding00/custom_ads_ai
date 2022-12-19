@@ -21,15 +21,15 @@ SO THAT I can have a post that I can copy and paste for my advertisement post ab
 ```
 GIVEN a post generator website,
 WHEN I visit the site for the first time
-THEN I am present with a login/sign up page 
+THEN I am present with a home page with a start button
+WHEN I click the button
+THEN I will lead to a product description page 
+WHEN I put my product description in 
+THEN I can have a post relate to my product for me to copy and paste 
+WHEN I click sign in on the navbar
+THEN I can put my account information in 
 WHEN I don't have an account
-THEN I can put username, email, and password
-WHEN I have an account already
-THEN I can click Already have an account and I will lead to Log In page to put email and password to sign in
-WHEN I am signed in to the site
-THEN I am taken back to the homepage, where there are 3 boxes that I can put options for my post
-WHEN I answer all the three questions and click the submit button
-THEN I will see a list of post example for me to copy
+THEN I can sign up 
 WHEN I want to log out
 THEN I can click Log Out on the top right of the page and sign out 
 ```
@@ -46,9 +46,17 @@ Components
 
 ```
 Created 7 files for components: 
-Home, Nav, Signup, Login, Product, Audience, Features
+Home, Nav, Signup, Login, Product-Description
 
 ```
+
+## Page layout
+![Home Page](./img/home.png)
+
+![Log In/Sign Up](./img/login.png)
+
+![Post Generator Page](./img/post.png)
+
 
 ## Heroku 💻
 

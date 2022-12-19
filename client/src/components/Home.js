@@ -1,18 +1,18 @@
 import React from "react";
 import { Component } from "react";
 import Display from "./Display";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 class Home extends Component {
   render() {
     return (
       <div>
         <Container>
-          <h1>Online Post Generator using OpenAI</h1>
-          <p>Start by picking any of the use cases to get started</p>
-          <Row>
-            <Col>
-              <Display
+          <h1 className='home-title'>Social Media Post Generator </h1>
+          <p className='sub-title'>Follow the steps below to generate a social media post!</p>
+          <Row className='card-home'>
+            <Col >
+              <Display className='card-box'
                 header="Product Description"
                 title="Generate Product Descriptions"
                 text="Generate a product description for product"
