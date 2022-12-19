@@ -128,10 +128,7 @@ const SignUp = () => {
             Already have an account? <Link to="/login">Log in</Link>
           </p> */}
 
-        
-        </Form>
-
-        <Button
+<Button
             className="button-33 auth-button"
             role="button"
             disabled={
@@ -146,6 +143,24 @@ const SignUp = () => {
           >
             Submit
           </Button>
+        
+        </Form>
+
+        {/* <Button
+            className="button-33 auth-button"
+            role="button"
+            disabled={
+              !(
+                userFormData.username &&
+                userFormData.email &&
+                userFormData.password
+              )
+            }
+            type="submit"
+            variant="success"
+          >
+            Submit
+          </Button> */}
       {/* </Card> */}
     </>
   );

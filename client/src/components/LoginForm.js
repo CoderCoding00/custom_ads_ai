@@ -54,7 +54,7 @@ const LoginForm = () => {
 
   return (
     <>
-      {/* <Card className='card-login'> */}
+      {/* <Card> */}
         <Form 
           noValidate
           validated={validated}
@@ -119,9 +119,7 @@ const LoginForm = () => {
             </Link>
           </p> */}
 
-
-        </Form>
-        <Button
+<Button
             className="button-33 auth-button text-center"
             role="button"
             disabled={!(userFormData.email && userFormData.password)}
@@ -130,6 +128,9 @@ const LoginForm = () => {
           >
             Submit
           </Button>
+
+        </Form>
+                  
       {/* </Card> */}
     </>
   );

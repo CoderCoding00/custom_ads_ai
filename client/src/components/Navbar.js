@@ -53,12 +53,12 @@ const NavTab = () => {
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav variant="pills">
+              <Nav >
                 <Nav.Item >
-                  <Nav.Link eventKey="login" className='pop'>Login</Nav.Link>
+                  <Nav.Link eventKey="login" id='pop'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="signup" className='pop'>Sign Up</Nav.Link>
+                  <Nav.Link eventKey="signup" id='pop'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
