@@ -39,6 +39,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/"));
 });
 
+// ADDED THIS TO PUSH TO HEROKU
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 // *** DO WE NEED THESE ROUTES ???
 // app.use(routes);
 
