@@ -6,8 +6,8 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/openai",
   // process.env.MONGODB_URI,
   {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
     // useCreateIndex: true,
     // useFindAndModify: false,
   }
