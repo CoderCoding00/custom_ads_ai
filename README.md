@@ -50,16 +50,16 @@ Home, Nav, Signup, Login, Product-Description
 
 ```
 
-## Page layout
-![Home Page](https://github.com/CoderCoding00/custom_ads_ai/issues/29#issue-1526751583)
+## Screenshots of Functioning Application
+![Home Page](https://user-images.githubusercontent.com/107374333/211463768-8cdd3dc3-304f-4f65-9f94-516b2e0996f4.png)
 
-![Log In](https://github.com/CoderCoding00/custom_ads_ai/issues/30#issue-1526752307)
+![Log In](https://user-images.githubusercontent.com/107374333/211463869-f0de8bfe-236a-44ad-8e44-186226783ed7.png)
 
-![SignUp](https://github.com/CoderCoding00/custom_ads_ai/issues/31#issue-1526752584)
+![SignUp](https://user-images.githubusercontent.com/107374333/211464061-9388d594-e75f-40d2-99ad-89a2dbf08679.png)
 
-![Generate_Post](https://github.com/CoderCoding00/custom_ads_ai/issues/32#issue-1526753054)
+![Generate_Post](https://user-images.githubusercontent.com/107374333/211464193-e22f7c63-4d26-4a90-ab35-72017271466b.png)
 
-![Post_Result](https://github.com/CoderCoding00/custom_ads_ai/issues/33#issue-1526753279)
+![Post_Result](https://user-images.githubusercontent.com/107374333/211464254-58e295f9-f50a-4979-b4c1-cc464556a63c.png)
 
 
 ## Heroku 💻
