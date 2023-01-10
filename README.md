@@ -51,11 +51,15 @@ Home, Nav, Signup, Login, Product-Description
 ```
 
 ## Page layout
-![Home Page](./img/home.png)
+![Home Page](https://github.com/CoderCoding00/custom_ads_ai/issues/29#issue-1526751583)
 
-![Log In/Sign Up](./img/login.png)
+![Log In](https://github.com/CoderCoding00/custom_ads_ai/issues/30#issue-1526752307)
 
-![Post Generator Page](./img/post.png)
+![SignUp](https://github.com/CoderCoding00/custom_ads_ai/issues/31#issue-1526752584)
+
+![Generate_Post](https://github.com/CoderCoding00/custom_ads_ai/issues/32#issue-1526753054)
+
+![Post_Result](https://github.com/CoderCoding00/custom_ads_ai/issues/33#issue-1526753279)
 
 
 ## Heroku 💻
