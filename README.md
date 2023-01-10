@@ -52,7 +52,7 @@ Home, Nav, Signup, Login, Product-Description
 
 ## Page layout
 ![Home Page](https://user-images.githubusercontent.com/107374333/211463768-8cdd3dc3-304f-4f65-9f94-516b2e0996f4.png)
-
+    
 ![Log In](https://user-images.githubusercontent.com/107374333/211463869-f0de8bfe-236a-44ad-8e44-186226783ed7.png)
 
 ![SignUp](https://user-images.githubusercontent.com/107374333/211464061-9388d594-e75f-40d2-99ad-89a2dbf08679.png)
