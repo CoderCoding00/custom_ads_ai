@@ -1,54 +1,28 @@
 # Project3_Team 5
 PostGenAI 🤖
 
-## The Challenge 🔐
-Our user want to have a place to create a social media post automatically about the product that they sale in order to save their time. 
+## Project Overview
+This is MERN stack application that allows users to input a product name and automatically generate a unique social meadia ad for their prouct, complete with hash tags related to the products name and features. We used OpenAI as an API and created carefully worded question that is not shown to the user, but acts as a prompt for the user. All the user must do is enter the name of the product they want to create an Ad for and a unique Ad will be generated for the user when they submit the request. Even if they enter the same product name twice, they will always get a unique Ad. Instead of hiring a someone to come up with a marketing Ad description, they can simply type in the product they want to sell and get a unique Ad description that they can use for their product.
 
-
-## The Concept 🔑
-We want to create an application that client can use to generate a social media post for their business by using MERN Stack and use Bootstrap as a CSS. For the generate post, we're using OpenAI to fetch the data for our website. 
-
-## User Story 📃
-
-```
-AS a user,
-I WANT to have a post generator website for advertising product,
-SO THAT I can have a post that I can copy and paste for my advertisement post about my product
-```
-
-## The Logic 🔍
-
-```
-GIVEN a post generator website,
-WHEN I visit the site for the first time
-THEN I am present with a home page with a start button
-WHEN I click the button
-THEN I will lead to a product description page 
-WHEN I put my product description in 
-THEN I can have a post relate to my product for me to copy and paste 
-WHEN I click sign in on the navbar
-THEN I can put my account information in 
-WHEN I don't have an account
-THEN I can sign up 
-WHEN I want to log out
-THEN I can click Log Out on the top right of the page and sign out 
-```
-
-## The Process 📝
+## Technology Used
+1.  Bootstrap
+2.  DotEnv
+3.  MongoDB
+4.  Express
+5.  React
+6.  Node
+7.  GraphQL
+8.  Redux
+9.  OpenAI (API)
+10. JSON Web Tokens (JWT)
+11. Moment.js
+   
+## The Process
 To sastify our user's needs, we created: 
 - Components for the home page, 
 - Created schemas, routes, and models for the server side
 - Created API route for OpenAI
 - Apply CSS Bootstrap for pages
-- Fixing error to make everything connect and work properly
-
-Components
-
-```
-Created 7 files for components: 
-Home, Nav, Signup, Login, Product-Description
-
-```
 
 ## Screenshots of Functioning Application
 ![Home Page](https://user-images.githubusercontent.com/107374333/211463768-8cdd3dc3-304f-4f65-9f94-516b2e0996f4.png)
@@ -62,13 +36,7 @@ Home, Nav, Signup, Login, Product-Description
 ![Post_Result](https://user-images.githubusercontent.com/107374333/211464254-58e295f9-f50a-4979-b4c1-cc464556a63c.png)
 
 
-## Heroku 💻
-Coming Soon
-
-## The Result 🏆
-The result is when we open the page, we were able to sign in and sign up and log out. And we can type in the input box to generate a social media post for a product.
-
-## The Collaborators  🧑🏻‍💻 🧑🏻‍💻 🧑🏻‍💻 👩🏻‍💻
+## The Collaborators
 [Drum Holliday](https://github.com/CoderCoding00)
 
 [Max Lin](https://github.com/max-lin95)
@@ -76,6 +44,9 @@ The result is when we open the page, we were able to sign in and sign up and log
 [John Lopex](https://github.com/Think-Again-Coder)
 
 [Daisy Lien](https://github.com/quynhlien2002)
+
+## Deployed on Heroku
+Coming Soon
 
 ## Submission 📬
 [GitHub Repo](https://github.com/CoderCoding00/custom_ads_ai)
