@@ -6,16 +6,16 @@ This application, utilizing the MERN stack, allows users to generate unique soci
 
 ## Technology Used
 1.  Bootstrap
-2.  DotEnv
-3.  MongoDB
-4.  Express
-5.  React
-6.  Node
-7.  GraphQL
-8.  Redux
-9.  OpenAI (API)
-10. JSON Web Tokens (JWT)
-11. Moment.js
+2.  MongoDB
+3.  Express
+4.  React
+5.  Node
+6.  GraphQL
+7.  Redux
+8.  OpenAI (API)
+9.  JSON Web Tokens (JWT)
+10. Moment.js
+11. DotEnv
    
 ## The Process
 To sastify our user's needs, we created: 
