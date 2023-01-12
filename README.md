@@ -2,20 +2,20 @@
 PostGenAI 🤖
 
 ## Project Overview
-This is MERN stack application that allows users to input a product name and automatically generate a unique social meadia ad for their prouct, complete with hash tags related to the products name and features. We used OpenAI as an API and created carefully worded question that is not shown to the user, but acts as a prompt for the user. All the user must do is enter the name of the product they want to create an Ad for and a unique Ad will be generated for the user when they submit the request. Even if they enter the same product name twice, they will always get a unique Ad. Instead of hiring a someone to come up with a marketing Ad description, they can simply type in the product they want to sell and get a unique Ad description that they can use for their product.
+This application, utilizing the MERN stack, allows users to generate unique social media advertisements for their products. The input of a product name prompts the utilization of OpenAI's API, resulting in the generation of relevant hashtags and a carefully crafted ad description. The user need only enter the desired product name to receive a unique and professional advertisement, eliminating the need for hiring a separate marketing professional. Each product name input results in a distinct advertisement, ensuring a personalized experience for the user.
 
 ## Technology Used
 1.  Bootstrap
-2.  DotEnv
-3.  MongoDB
-4.  Express
-5.  React
-6.  Node
-7.  GraphQL
-8.  Redux
-9.  OpenAI (API)
-10. JSON Web Tokens (JWT)
-11. Moment.js
+2.  MongoDB
+3.  Express
+4.  React
+5.  Node
+6.  GraphQL
+7.  Redux
+8.  OpenAI (API)
+9.  JSON Web Tokens (JWT)
+10. Moment.js
+11. DotEnv
    
 ## The Process
 To sastify our user's needs, we created: 
@@ -38,17 +38,14 @@ To sastify our user's needs, we created:
 
 ## The Collaborators
 [Drum Holliday](https://github.com/CoderCoding00)
-
 [Max Lin](https://github.com/max-lin95)
-
 [John Lopex](https://github.com/Think-Again-Coder)
-
 [Daisy Lien](https://github.com/quynhlien2002)
 
 ## Deployed on Heroku
 Coming Soon
 
-## Submission 📬
+## Submission
 [GitHub Repo](https://github.com/CoderCoding00/custom_ads_ai)
 
 
