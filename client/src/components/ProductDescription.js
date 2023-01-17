@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 // import auth require???
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 
 // THE 2 BELOW ARE NEED TO SAVE THE POST
 // import { useMutation } from "@apollo/client";
