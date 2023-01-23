@@ -1,4 +1,4 @@
-# Project3_Team 5
+# Ad Post Genetator Using OpenAI 
 PostGenAI 🤖
 
 ## Project Overview

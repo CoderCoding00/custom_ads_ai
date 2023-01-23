@@ -44,9 +44,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-// *** DO WE NEED THESE ROUTES ???
-// app.use(routes);
-
 // NEW INSTANCE OF APOLLO SERVER WITH GRAPHQL PATH (SCHEMA)
 const startingApolloServer = async (typeDefs, resolvers) => {
   await server.start();
