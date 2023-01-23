@@ -55,33 +55,11 @@ class ProductDescription extends Component {
     // *** USE .productName b/c the line 42 'name' is "productName"
     console.log(formDataObj.productName);
 
-    // *** ?? GIVEN CODE FROM OPENAI NOT USED
-
-    // const configuration = new Configuration({
-    //   apiKey: process.env.OPENAI_API_KEY,
-    // });
-    // const openai = new OpenAIApi(configuration);
-
-    // const response = await openai.createCompletion({
-    //   model: "text-davinci-003",
-    //   prompt: "Generate a social media ad for a macbook pro\n\n\n\nIntroducing the new MacBook Pro – the perfect combination of power and portability. With the latest Intel processors, stunning Retina display, and all-day battery life, you can take your work and creativity to the next level. Get yours today – you won't regret it! #MacBookPro #PowerAndPortability #IntelProcessors #RetinaDisplay",
-    //   temperature: 0.7,
-    //   max_tokens: 360,
-    //   top_p: 1,
-    //   frequency_penalty: 0,
-    //   presence_penalty: 0,
-    // });
-
     // *** REFACTORED CODE FROM OPENAI
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
-
-    // **USE THIS ONCE API KEY IS IN .env
-    // const configuration = new Configuration({
-    //   apiKey: process.env.OPENAI_API_KEY,
-    // });
 
     // OPEN AI CODE GIVEN TO GENERATE THE AD
     openai
